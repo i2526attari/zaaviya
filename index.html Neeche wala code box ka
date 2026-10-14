@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ur-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zaaviya</title>
+<style>
+:root{--bg:#F5F7F6;--card:#fff;--ink:#12303B;--mute:#5B717A;--line:#D8E1E3;--accent:#0E6E7E;--lens:#E9A63A;--warn:#B3451F;--warnbg:#FBEBE3;--ok:#1F7A4D;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0D1A1F;--card:#14262D;--ink:#E6F0F2;--mute:#97ADB4;--line:#26414A;--accent:#4FC3D6;--lens:#F0B456;--warn:#F0946F;--warnbg:#3A2219;--ok:#6FD3A0}}
+:root[data-theme="dark"]{--bg:#0D1A1F;--card:#14262D;--ink:#E6F0F2;--mute:#97ADB4;--line:#26414A;--accent:#4FC3D6;--lens:#F0B456;--warn:#F0946F;--warnbg:#3A2219;--ok:#6FD3A0}
+*{box-sizing:border-box}
+html{color-scheme:light dark}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+main{max-width:520px;margin:0 auto;padding:20px 16px 40px}
+h1{font-size:1.6rem;margin:0 0 4px}
+p.sub{margin:0 0 18px;color:var(--mute)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:14px}
+h2{font-size:1rem;margin:0 0 10px}
+.row{display:grid;grid-template-columns:44px 1fr 1fr 1fr;gap:8px;align-items:center;margin-bottom:8px}
+.row.hd{color:var(--mute);font-size:.8rem;margin-bottom:4px}
+.row b{font-size:1.1rem}
+input{width:100%;font-size:1.1rem;padding:10px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);min-width:0}
+input:focus,button:focus-visible{outline:3px solid var(--accent);outline-offset:1px}
+.addrow{display:flex;align-items:center;gap:10px;margin-top:4px}
+.addrow label{font-weight:600}
+.addrow input{max-width:120px}
+.btns{display:flex;gap:10px}
+button{flex:1;padding:13px;font-size:1rem;font-weight:600;border-radius:10px;border:1px solid var(--accent);cursor:pointer}
+#go{background:var(--accent);color:#fff}
+#clr{background:transparent;color:var(--accent)}
+.eyes{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.eye h3{margin:0 0 2px;font-size:.95rem}
+.eye svg{width:100%;height:64px;display:block}
+.eye .t{font-weight:600}
+.eye .d{color:var(--mute);font-size:.88rem}
+.pill{display:inline-block;padding:2px 10px;border-radius:99px;background:var(--line);font-size:.82rem;margin:2px 4px 2px 0}
+.big{font-size:1.5rem;font-weight:700;color:var(--accent)}
+ul{margin:6px 0 0;padding-left:20px}
+li{margin-bottom:4px}
+.warn{background:var(--warnbg);color:var(--warn);border-radius:10px;padding:10px 12px;margin-bottom:8px;font-size:.92rem}
+.note{color:var(--mute);font-size:.8rem}
+.row{grid-template-columns:28px 1fr 1fr 1fr;gap:6px}.f{display:flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--bg);min-width:0}.f:focus-within{outline:3px solid var(--accent);outline-offset:1px}.f input{border:0;border-radius:0;flex:1;width:auto;padding:10px 2px;text-align:center}.f input:focus{outline:none}.f button{flex:none;width:30px;padding:0;border:0;border-right:1px solid var(--line);border-radius:0;background:var(--card);color:var(--accent);font-size:1.3rem}
+.cust{display:grid;grid-template-columns:1fr 1fr;gap:8px}.cust .full{grid-column:1/-1}.cust .note{margin-bottom:2px}.rxt{width:100%;border-collapse:collapse;text-align:center}.rxt th,.rxt td{padding:8px 4px;border:1px solid var(--line)}.rxt td{font-weight:600}.rxt .sec td{background:var(--line);font-weight:700;text-align:left;font-size:.85rem}.rxh{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;margin-bottom:12px}.rxh span{display:block;font-size:.75rem;color:var(--mute)}.rxh div{font-weight:600;word-break:break-word}
+#rx{padding:0;overflow:hidden;border:0;box-shadow:0 3px 12px rgba(0,0,0,.18)}#rx .rxtop{background:linear-gradient(135deg,#0E6E7E,#2A5FD3 60%,#7B3FD1);color:#fff;padding:14px 16px}#rx .rxtop h2{margin:0;font-size:1.15rem}#rx .rxbody{padding:14px}.rxh>div{background:rgba(42,95,211,.12);border-radius:8px;padding:6px 10px}.rxh>div.gl{background:rgba(232,128,31,.2)}.rxt .sec.d td{background:#1E88C9;color:#fff}.rxt .sec.n td{background:#E8801F;color:#fff}.rxt .dr th,.rxt .dr td{background:rgba(30,136,201,.14)}.rxt .nr th,.rxt .nr td{background:rgba(232,128,31,.16)}.addchip{display:inline-block;background:#7B3FD1;color:#fff;border-radius:99px;padding:3px 16px;font-weight:700}
+.mfm{margin-top:10px;padding:8px 10px;border-radius:8px;background:rgba(123,63,209,.13);font-size:.92rem}.mfm div{margin-top:2px}.gt{background:linear-gradient(90deg,#0E6E7E,#2A5FD3,#7B3FD1);-webkit-background-clip:text;background-clip:text;color:transparent}.card{border-top:4px solid var(--accent);box-shadow:0 2px 8px rgba(0,0,0,.06)}h2{color:var(--accent)}#rx .rxtop h2{color:#fff}#go{background:linear-gradient(135deg,#0E6E7E,#2A5FD3);border:0;border-radius:12px;padding:14px;font-size:1.05rem}#clr{border-radius:12px}body{background:radial-gradient(circle at 92% 6%,rgba(123,63,209,.18),transparent 38%) fixed,radial-gradient(circle at 4% 38%,rgba(14,110,126,.16),transparent 36%) fixed,radial-gradient(circle at 96% 80%,rgba(233,166,58,.14),transparent 34%) fixed,var(--bg)}
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:8px}.logo{width:54px;height:54px;flex:none;filter:drop-shadow(0 3px 6px rgba(0,0,0,.22))}.brand h1{margin:0;font-size:2rem;letter-spacing:.5px}.tag{color:var(--mute);font-size:.85rem}#rx .rxtop{display:flex;justify-content:space-between;align-items:center;gap:8px}.rxbrand{font-weight:700;letter-spacing:.6px}
+.rec{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-top:1px solid var(--line)}.rec .rb{display:flex;gap:6px;flex:none}.rec button{flex:none;padding:8px 12px;font-size:.9rem;border-radius:8px}.rec .go2{background:var(--accent);color:#fff}.rec .del{background:transparent;color:var(--warn);border-color:var(--warn)}#sv,#sn{border-radius:12px;padding:13px;font-size:1rem}#sv{background:linear-gradient(135deg,#1F7A4D,#2AA66B);color:#fff;border:0}#sn{background:transparent;color:var(--accent)}
+#out{display:none}
+</style>
+</head>
+<body>
+<main>
+<div class="brand"><svg class="logo" viewBox="0 0 48 48" role="img" aria-label="Zaaviya logo"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0E6E7E"/><stop offset="1" stop-color="#7B3FD1"/></linearGradient></defs><rect width="48" height="48" rx="12" fill="url(#lg)"/><path d="M6 24Q24 8 42 24Q24 40 6 24Z" fill="none" stroke="#fff" stroke-width="2.5"/><circle cx="24" cy="24" r="7" fill="#fff" fill-opacity=".92"/><circle cx="24" cy="24" r="2.6" fill="#12303B"/><path d="M31 24H41M30 19L38 12" stroke="#F2B544" stroke-width="2.5" stroke-linecap="round"/></svg><div><h1><span class="gt">Zaaviya</span></h1><div class="tag">Lens aur prescription ka saathi</div></div></div>
+<p class="sub">Aankh ka number daalein, lens ki salah payein.</p>
+<div class="card"><h2>👤 Customer</h2><div class="cust">
+<div class="full"><div class="note">Naam</div><input id="cn" type="text" aria-label="Customer naam"></div>
+<div class="full"><div class="note">Mobile number</div><input id="cm" type="tel" aria-label="Mobile number"></div>
+<div><div class="note">Umar (age)</div><input id="ca" type="number" min="0" max="120" aria-label="Age"></div>
+<div><div class="note">Test ki date</div><input id="cd" type="date" aria-label="Test ki date"></div>
+<div><div class="note">Glasses banane ki date</div><input id="cg" type="date" aria-label="Glasses banane ki date"></div>
+</div></div>
+
+<div class="card">
+<h2>👁️ Eye number (Door ka)</h2>
+<div class="row hd"><span></span><span>SPH</span><span>CYL</span><span>AXIS</span></div>
+<div class="row"><b>R</b><input id="rs" type="number" step="0.25" placeholder="-2.50" aria-label="Right SPH"><input id="rc" type="number" step="0.25" placeholder="-0.75" aria-label="Right CYL"><input id="ra" type="number" step="1" min="0" max="180" placeholder="90" aria-label="Right AXIS"></div>
+<div class="row"><b>L</b><input id="ls" type="number" step="0.25" placeholder="-3.00" aria-label="Left SPH"><input id="lc" type="number" step="0.25" placeholder="-0.50" aria-label="Left CYL"><input id="la" type="number" step="1" min="0" max="180" placeholder="80" aria-label="Left AXIS"></div>
+<div class="addrow"><label for="add">ADD</label><input id="add" type="number" step="0.25" min="0" placeholder="+1.50"><span class="note">(khali chor dein agar nahi hai)</span></div>
+</div>
+
+<div class="card"><h2>📖 Near number <span class="note">(agar alag likha ho)</span></h2>
+<div class="row hd"><span></span><span>SPH</span><span>CYL</span><span>AXIS</span></div>
+<div class="row"><b>R</b><input id="nrs" placeholder="+1.50" aria-label="Right near SPH"><input id="nrc" placeholder="" aria-label="Right near CYL"><input id="nra" type="number" step="1" min="0" max="180" placeholder="90" aria-label="Right near AXIS"></div>
+<div class="row"><b>L</b><input id="nls" placeholder="+1.50" aria-label="Left near SPH"><input id="nlc" placeholder="" aria-label="Left near CYL"><input id="nla" type="number" step="1" min="0" max="180" placeholder="80" aria-label="Left near AXIS"></div></div>
+<div class="btns"><button id="go">✅ Salah dekhein</button><button id="clr">🧹 Saaf karein</button></div>
+
+<div id="out" style="margin-top:14px">
+<div class="card" id="rx"></div>
+<div class="card"><h2>👁️ Dono aankhein</h2><div class="eyes" id="eyes"></div></div>
+<div class="card"><h2>🔎 Lens ki salah</h2><div id="rec"></div></div>
+<div class="card"><h2>💧 Contact lens</h2><div id="cl"></div></div>
+<div id="warns"></div>
+<p class="note">Yeh sirf madadgar suggestion hai. Aakhri faisla optometrist ke nuskhe aur customer ki zarurat par hoga. CYL plus ho ya minus, app khud minus form mein badal kar hisaab karta hai.</p>
+</div>
+<div class="card" id="saved"><h2>📂 Purane customers</h2><input id="q" type="search" placeholder="Naam ya mobile se dhoondhein" aria-label="Search"><div id="list" style="margin-top:10px"></div><p class="note">Yeh data isi phone ke browser mein save hota hai. Phone badalne ya browser saaf karne par ud sakta hai.</p></div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+const num=id=>{const v=parseFloat(String($(id).value).replace(",","."));return isNaN(v)?0:v};
+const has=id=>$(id).value.trim()!=="";
+const fmt=n=>(n>0?"+":"")+n.toFixed(2);
+
+function analyse(s0,c0,a0){
+  let s=s0,c=c0,a=a0,tr=false;
+  if(c>0){s=s0+c0;c=-c0;a=a0<=90?a0+90:a0-90;tr=true;}
+  const m1=s,m2=s+c;
+  const worst=Math.max(Math.abs(m1),Math.abs(m2));
+  const sph=Math.abs(m1)>=Math.abs(m2)?m1:m2;
+  const cc=Math.abs(c)>=0.25;
+  const z=Math.abs(m2)<0.125;
+  let kind;
+  if(worst<0.25) kind={t:"Normal / plano",d:"Koi khaas nazar ka masla nahi"};
+  else if(!cc&&sph<0) kind={t:"Myopia",d:"Door ki nazar kamzor (minus power)"};
+  else if(!cc) kind={t:"Hypermetropia",d:"Paas ki nazar kamzor (plus power)"};
+  else if(m1>0&&m2<-0.125) kind={t:"Mixed astigmatism (cross compound)",d:"Ek meridian plus, doosra minus"};
+  else if(m1>0) kind=z?{t:"Simple hyperopic astigmatism",d:"Ek meridian plus, doosra zero"}:{t:"Compound hyperopic astigmatism",d:"Dono meridian plus"};
+  else kind=Math.abs(m1)<0.125?{t:"Simple myopic astigmatism",d:"Ek meridian minus, doosra zero"}:{t:"Compound myopic astigmatism",d:"Dono meridian minus"};
+  let lvl="Low";
+  if(worst>=6) lvl="Very high"; else if(worst>=4) lvl="High"; else if(worst>=2) lvl="Medium";
+  if(worst<0.25) lvl="-";
+  return {s,c,a,tr,worst,kind,lvl,ast:cc,sph,m1,m2};
+}
+function indexFor(p){
+  if(p<2) return 1.50; if(p<4) return 1.56; if(p<6) return 1.60; if(p<8) return 1.67; return 1.74;
+}
+function lensSVG(P,idx){
+  const f=0.5/(idx-1), cx=50, x1=8, x2=92;
+  let e,c,pathTop,y;
+  const mid=34;
+  if(P<0){ e=Math.min(3+Math.abs(P)*1.7*f,48); c=3; }
+  else { e=2.5; c=Math.min(3+Math.abs(P)*2.2*f,48); }
+  if(Math.abs(P)<0.25){ e=c=4; }
+  const top=mid-e/2, bot=mid+e/2, ctop=mid-c/2, cbot=mid+c/2;
+  const cyT=2*ctop-top, cyB=2*cbot-bot;
+  const d=`M${x1},${top} Q${cx},${cyT} ${x2},${top} L${x2},${bot} Q${cx},${cyB} ${x1},${bot} Z`;
+  return `<svg viewBox="0 0 100 68" role="img" aria-label="Lens cross-section"><path d="${d}" fill="var(--lens)" fill-opacity=".55" stroke="var(--lens)" stroke-width="1.5"/></svg>`;
+}
+function vf(m){return m/(1-0.012*m)}
+function rq(x){return Math.round(x*4)/4}
+function clFor(E){
+  if(E.worst<0.25) return "Number nahi hai, contact lens ki zarurat nahi";
+  if(Math.abs(E.c)<0.75){
+    const p=rq(vf(E.m1+E.c/2));
+    return "Spherical: <b>"+fmt(p)+"</b>";
+  }
+  const s=rq(vf(E.m1)), c=rq(vf(E.m2)-vf(E.m1));
+  let ax=Math.round(E.a/10)*10; if(ax<=0||ax>180) ax=180;
+  let t="Toric: <b>"+fmt(s)+" / "+fmt(c)+" x "+ax+"</b>";
+  if(Math.abs(c)>2.25) t+=" <span class=\"note\">(cylinder zyada hai, special order ya RGP poochhein)</span>";
+  return t;
+}
+function run(){
+  const R=analyse(num("rs"),num("rc"),num("ra")), L=analyse(num("ls"),num("lc"),num("la"));
+  let add=num("add");
+  const nearR=has("nrs"),nearL=has("nls");
+  const adR=nearR?num("nrs")-num("rs"):null, adL=nearL?num("nls")-num("ls"):null;
+  if(add===0){const a=[adR,adL].filter(x=>x!==null&&x>0);if(a.length)add=a.reduce((p,q)=>p+q)/a.length;}
+  const worst=Math.max(R.worst,L.worst);
+  const idx=indexFor(worst);
+  const cards=[["Right (R)",R,"rs","rc","ra"],["Left (L)",L,"ls","lc","la"]].map(([n,E,sid,cid,aid])=>{
+    const p=Math.round(E.sph*4)/4;
+    return `<div class="eye"><h3>${n}</h3>${lensSVG(p,idx)}<div class="t">${E.kind.t}</div><div class="d">${E.kind.d}</div><span class="pill">Power: ${E.lvl}</span>${add>0&&has(sid)?`<div class="t" style="margin-top:6px">Near (door+ADD): ${fmt(num(sid)+add)}${num(cid)?" / "+fmt(num(cid))+" x "+num(aid):""}</div>`:""}${E.ast?`<span class="pill">Astigmatism</span><div class="d">Minus form: ${fmt(E.s)} / ${fmt(E.c)} x ${Math.round(E.a)}${E.tr?" (plus CYL se badla gaya)":""}</div>`:""}</div>`;
+  }).join("");
+  $("eyes").innerHTML=cards;
+
+  let items=[];
+  items.push(`Lens index: <span class="big">${idx.toFixed(2)}</span>`+(idx>1.5?` <span class="note">(patla lens)</span>`:` <span class="note">(normal lens kaafi hai)</span>`));
+  if(add>0){
+    const t=add>=2.25?"Progressive ya bifocal (reading ka power zyada hai)":"Progressive ya bifocal. Sirf padhne ke liye alag chashma bhi ho sakta hai";
+    items.push(`Paas ki nazar ke liye ADD ${fmt(add)}: ${t}`);
+  }
+  if(add>0){
+    const nf=(sid,cid,aid)=>has(sid)?fmt(num(sid)+add)+(num(cid)?" / "+fmt(num(cid))+" x "+num(aid):""):"-";
+    items.push("<b>Near number (door + ADD)</b><br>R: "+nf("rs","rc","ra")+"<br>L: "+nf("ls","lc","la"));
+  }
+  if(nearR||nearL){
+    const f=(s,c,a)=>fmt(num(s))+(num(c)?" / "+fmt(num(c))+" x "+num(a):"");
+    items.push("Near (paas) number: "+(nearR?"R "+f("nrs","nrc","nra"):"")+(nearR&&nearL?" | ":"")+(nearL?"L "+f("nls","nlc","nla"):"")+". Reading ke liye alag chashma, ya progressive/bifocal.");
+    items.push("Near se nikla ADD: "+[adR!==null?"R "+fmt(adR):"",adL!==null?"L "+fmt(adL):""].filter(Boolean).join(", ")+(num("add")===0&&add>0?" (isi se ADD liya gaya)":""));
+    if(adR!==null&&adL!==null&&Math.abs(adR-adL)>=0.5) items.push("Dono aankhon ka ADD alag hai, nuskha dobara check karein");
+  }
+  items.push("Anti-glare (AR) coating: har lens par achhi rehti hai");
+  items.push("Blue cut: agar customer mobile ya computer zyada use karta hai");
+  if(worst>=4) items.push("Frame chhota aur halka lein, taake lens kinare se mota na dikhe");
+  if(worst>=6) items.push("Aspheric design lens behtar rahega (patla aur saaf nazar)");
+  if(R.ast||L.ast) items.push("Astigmatism hai: AXIS sahi tarah set karwayein, lens fitting mein dhyan rakhein");
+  if((R.ast&&R.m1>0&&R.m2<-0.125)||(L.ast&&L.m1>0&&L.m2<-0.125)) items.push("Mixed (cross compound) number: lens ki base curve dhyan se chunein, aur customer ko naye chashme ki aadat mein kuch din lag sakte hain");
+  $("rec").innerHTML=`<ul>${items.map(i=>`<li>${i}</li>`).join("")}</ul>`;
+  const ad=add>0?(add<=1.25?"Low":add<=2?"Medium":"High"):"";
+  let ci=`<ul><li><b>R:</b> ${clFor(R)}</li><li><b>L:</b> ${clFor(L)}</li>`;
+  if(add>0) ci+=`<li>ADD ${fmt(add)} hai: multifocal contact lens (${ad} ADD), ya monovision (ek aankh door, ek paas ke liye)</li>`;
+  if((R.ast&&R.m1>0&&R.m2<-0.125)||(L.ast&&L.m1>0&&L.m2<-0.125)) ci+=`<li>Mixed number: toric ya RGP lens, fitting zaroori</li>`;
+  if(worst>=10) ci+=`<li>10 se zyada power: soft lens kam milte hain, order par mangwana pad sakta hai</li>`;
+  ci+=`</ul><p class="note">Yeh chashme ke number se vertex distance (12 mm) ke hisaab se badla hua hai, isliye chashme se alag aa sakta hai. Base curve aur diameter ke liye aankh ki fitting zaroor karein.</p>`;
+  $("cl").innerHTML=ci;
+
+  let w=[];
+  if(has("rs")&&has("ls")&&Math.abs(R.sph-L.sph)>=2) w.push("Dono aankhon ke number mein 2.00 se zyada farq hai. Customer ko chakkar ya sar dard ho sakta hai, optometrist se confirm karein.");
+  if(worst>=8) w.push("Bahut high power: lens mota ho sakta hai aur kinare par nazar dhundhli lag sakti hai. Customer ko pehle samjha dein.");
+  if(R.worst>=0.25 && !has("ra") && R.ast) w.push("Right eye ka AXIS nahi daala.");
+  if(L.worst>=0.25 && !has("la") && L.ast) w.push("Left eye ka AXIS nahi daala.");
+  $("warns").innerHTML=w.map(x=>`<div class="warn">${x}</div>`).join("");
+  const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  const nm=$("cn").value.trim()||"-", ag=$("ca").value||"-", mb=$("cm").value.trim()||"-";
+  const dd=$("cd").value?$("cd").value.split("-").reverse().join("/"):"-";
+  const dg=$("cg").value?$("cg").value.split("-").reverse().join("/"):"-";
+  const nz=id=>has(id)&&num(id)!==0;
+  const dist=(s,c,a)=>[has(s)?fmt(num(s)):"-",nz(c)?fmt(num(c)):"-",nz(c)?String(num(a)):"-"];
+  const near=(s,c,a,ns,nc,na)=>{
+    if(has(ns)){const cid=has(nc)?nc:c,aid=has(nc)?na:a;return [fmt(num(ns)),nz(cid)?fmt(num(cid)):"-",nz(cid)?String(num(aid)):"-"];}
+    if(add>0&&has(s)) return [fmt(num(s)+add),nz(c)?fmt(num(c)):"-",nz(c)?String(num(a)):"-"];
+    return ["-","-","-"];
+  };
+  const trw=(lab,r,k)=>`<tr class="${k}"><th>${lab}</th><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`;
+  const mf=r=>{if(r[0]==="-"||r[1]==="-")return null;const c=parseFloat(r[1]);if(!(c>0))return null;const a=parseFloat(r[2])||0;return fmt(parseFloat(r[0])+c)+" / "+fmt(-c)+" x "+(a<=90?a+90:a-90);};
+  const L2=[["Door R",dist("rs","rc","ra")],["Door L",dist("ls","lc","la")],["Near R",near("rs","rc","ra","nrs","nrc","nra")],["Near L",near("ls","lc","la","nls","nlc","nla")]].map(([l,r])=>{const m=mf(r);return m?`<div><b>${l}:</b> ${m}</div>`:"";}).join("");
+  $("rx").innerHTML=`<div class="rxtop"><h2>👓 Prescription card</h2><div class="rxbrand">Zaaviya</div></div><div class="rxbody"><div class="rxh"><div><span>👤 Naam</span>${esc(nm)}</div><div><span>📱 Mobile</span>${esc(mb)}</div><div><span>🎂 Umar</span>${esc(ag)}</div><div><span>🧪 Test ki date</span>${dd}</div><div class="gl"><span>👓 Glasses ki date</span>${dg}</div></div>`
+   +`<table class="rxt"><tr><th></th><th>SPH</th><th>CYL</th><th>AXIS</th></tr>`
+   +`<tr class="sec d"><td colspan="4">🔭 DOOR (Distance)</td></tr>`+trw("R",dist("rs","rc","ra"),"dr")+trw("L",dist("ls","lc","la"),"dr")
+   +`<tr class="sec n"><td colspan="4">📖 KAREEB (Near)</td></tr>`+trw("R",near("rs","rc","ra","nrs","nrc","nra"),"nr")+trw("L",near("ls","lc","la","nls","nlc","nla"),"nr")+`</table>`+(L2?`<div class="mfm"><b>🔁 Minus form (CYL minus mein)</b>${L2}</div>`:"")
+   +(add>0?`<div style="margin-top:10px"><b>➕ ADD:</b> <span class="addchip">${fmt(add)}</span></div>`:"")+`</div>`;
+  $("out").style.display="block";
+  $("out").scrollIntoView({behavior:"smooth",block:"start"});
+}
+$("go").onclick=run;
+const FIELDS=["cn","cm","ca","cd","cg","rs","rc","ra","ls","lc","la","add","nrs","nrc","nra","nls","nlc","nla"];
+const KEY="zaaviya_records_v1";
+let editId=null,msgT=null;
+const loadAll=()=>{try{const a=JSON.parse(localStorage.getItem(KEY)||"[]");return Array.isArray(a)?a:[]}catch(e){return []}};
+const saveAll=a=>{try{localStorage.setItem(KEY,JSON.stringify(a));return true}catch(e){return false}};
+const eh=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const msg=document.createElement("div");msg.className="note";msg.setAttribute("role","status");msg.style.cssText="margin:8px 2px;min-height:1.2em";
+const toast=t=>{msg.textContent=t;clearTimeout(msgT);msgT=setTimeout(()=>{msg.textContent=""},4000)};
+const brow=document.createElement("div");brow.className="btns";brow.style.marginTop="10px";
+brow.innerHTML='<button id="sv" type="button">💾 Save karein</button><button id="sn" type="button">📄 Naya record</button>';
+document.querySelector(".btns").after(brow);brow.after(msg);
+function renderList(){
+  const q=$("q").value.trim().toLowerCase();
+  const all=loadAll().filter(r=>!q||((r.d.cn||"")+" "+(r.d.cm||"")).toLowerCase().includes(q));
+  $("list").innerHTML=all.length?all.map(r=>`<div class='rec'><div><b>${eh(r.d.cn||"(naam nahi)")}</b><div class='note'>📱 ${eh(r.d.cm||"-")} · 🧪 ${r.d.cd?r.d.cd.split("-").reverse().join("/"):"-"}</div></div><div class='rb'><button type='button' class='go2' data-o='${r.id}'>Kholein</button><button type='button' class='del' data-d='${r.id}'>🗑️</button></div></div>`).join(""):"<div class='note'>Abhi koi record nahi hai.</div>";
+}
+const doSave=asNew=>{
+  const d={};FIELDS.forEach(f=>d[f]=$(f).value);
+  if(!d.cn.trim()&&!d.cm.trim()){toast("Pehle customer ka naam ya mobile likhein");return;}
+  const all=loadAll();const useId=asNew?null:editId;
+  const rec={id:useId||("r"+Date.now()),ts:Date.now(),d};
+  const i=useId?all.findIndex(x=>x.id===useId):-1;
+  if(i>=0)all[i]=rec;else all.unshift(rec);
+  editId=rec.id;
+  toast(saveAll(all)?"\u2705 Save ho gaya":"Save nahi ho saka, browser ne rok diya");
+  renderList();
+};
+$("sv").onclick=()=>doSave(false);
+$("sn").onclick=()=>doSave(true);
+$("q").addEventListener("input",renderList);
+$("clr").addEventListener("click",()=>{editId=null;});
+$("list").addEventListener("click",e=>{
+  const b=e.target.closest("button");if(!b)return;
+  if(b.dataset.o){
+    const r=loadAll().find(x=>x.id===b.dataset.o);if(!r)return;
+    FIELDS.forEach(f=>{$(f).value=r.d[f]||""});
+    ["rs","rc","ls","lc","nrs","nrc","nls","nlc"].forEach(f=>$(f).dispatchEvent(new Event("input")));
+    editId=r.id;toast("Record khul gaya. Badlav ke baad Save dabayein.");run();
+  }else if(b.dataset.d){
+    if(b.dataset.armed){saveAll(loadAll().filter(x=>x.id!==b.dataset.d));if(editId===b.dataset.d)editId=null;toast("Record hata diya");renderList();}
+    else{b.dataset.armed="1";b.textContent="Pakka?";setTimeout(()=>{if(b.isConnected){delete b.dataset.armed;b.textContent="\ud83d\uddd1\ufe0f"}},3000);}
+  }
+});
+renderList();
+const setToday=()=>{$("cd").value=new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,10)};setToday();$("clr").addEventListener("click",()=>setTimeout(setToday,0));
+["rs","rc","ls","lc","nrs","nrc","nls","nlc"].forEach(id=>{
+ const i=$(id);i.type="text";i.inputMode="decimal";i.autocomplete="off";
+ const w=document.createElement("div");w.className="f";
+ const b=document.createElement("button");b.type="button";b.textContent="+";b.setAttribute("aria-label","Plus ya minus badlein");
+ i.parentNode.insertBefore(w,i);w.appendChild(b);w.appendChild(i);
+ const sync=()=>{b.textContent=i.value.trim().startsWith("-")?"\u2212":"+";};
+ b.onclick=()=>{let v=i.value.trim().replace(/^\+/,"");v=v.startsWith("-")?v.slice(1):"-"+v;i.value=v;sync();i.focus();};
+ i.addEventListener("input",sync);
+});
+$("clr").addEventListener("click",()=>setTimeout(()=>["rs","rc","ls","lc","nrs","nrc","nls","nlc"].forEach(id=>$(id).dispatchEvent(new Event("input"))),0));
+$("clr").onclick=()=>{document.querySelectorAll("input").forEach(i=>i.value="");$("out").style.display="none";};
+</script>
+</body>
+</html>
